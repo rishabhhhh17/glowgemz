@@ -10,15 +10,15 @@ export default function AboutPage() {
       <section className="container-tight pt-12 md:pt-20">
         <span className="eyebrow">Our story</span>
         <h1 className="mt-3 display-serif text-display-xl text-ink max-w-3xl">
-          Fine gold jewellery,
+          Polished gold jewellery,
           <br />
-          made the way it used to be.
+          made for everyday.
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-500">
-          GlowGemz is a small jewellery studio in Mumbai. We make solid 14k gold pieces —
-          BIS-hallmarked, hand-finished, sold direct. No middlemen, no plated shortcuts,
-          no "starting at" marketing prices. Just gold, set with traceable stones, at honest
-          numbers.
+          GlowGemz is a fashion-jewellery studio in Mumbai. We make 18k gold-plated pieces —
+          hypoallergenic, anti-tarnish, sold direct. No middlemen, no inflated boutique
+          markups, no "starting at" trick pricing. Just well-made imitation jewellery
+          at honest numbers — most pieces under ₹999.
         </p>
       </section>
 
@@ -41,25 +41,25 @@ export default function AboutPage() {
         </div>
         <ul className="space-y-7">
           <li>
-            <h3 className="font-display text-xl text-ink">Solid 14k, never plated.</h3>
+            <h3 className="font-display text-xl text-ink">18k plating, double-coated.</h3>
             <p className="mt-1.5 text-sm text-ink-500 leading-relaxed">
-              Plated jewellery looks great for six months and forgettable forever after.
-              Solid gold doesn't tarnish, doesn't fade, and gets handed down. We only make
-              the second kind.
+              Most plated jewellery dulls in weeks. We use a thicker 18k gold layer over a
+              hypoallergenic brass core, sealed with an anti-tarnish coating — so the colour
+              actually stays.
             </p>
           </li>
           <li>
-            <h3 className="font-display text-xl text-ink">Traceable stones.</h3>
+            <h3 className="font-display text-xl text-ink">Skin-safe stones.</h3>
             <p className="mt-1.5 text-sm text-ink-500 leading-relaxed">
-              Lab-grown diamonds, conflict-free coloured stones, and certified natural pearls.
-              Each stone arrives with a paper trail.
+              AAA-grade cubic zirconia and shell pearls, set by hand. Lead-free, nickel-free,
+              kind to sensitive ears.
             </p>
           </li>
           <li>
-            <h3 className="font-display text-xl text-ink">Lifetime polish & repair.</h3>
+            <h3 className="font-display text-xl text-ink">6-month tarnish guarantee.</h3>
             <p className="mt-1.5 text-sm text-ink-500 leading-relaxed">
-              Send anything back. We polish, re-tighten prongs, and re-string for free —
-              forever. The piece is yours; the upkeep is ours.
+              If a piece fades, breaks or loses a stone in the first six months, send it back
+              and we'll replace it — no questions, no shipping fees.
             </p>
           </li>
         </ul>

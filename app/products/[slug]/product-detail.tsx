@@ -144,10 +144,10 @@ export function ProductDetail({ product }: { product: Product }) {
 
         <ul className="mt-6 grid grid-cols-3 gap-3 text-xs text-ink-700">
           <li className="flex flex-col items-center text-center gap-1.5 rounded-lg border border-border bg-cream-100 p-3">
-            <Sparkles className="h-4 w-4 text-gold-600" /> Solid 14k
+            <Sparkles className="h-4 w-4 text-gold-600" /> 18k plated
           </li>
           <li className="flex flex-col items-center text-center gap-1.5 rounded-lg border border-border bg-cream-100 p-3">
-            <ShieldCheck className="h-4 w-4 text-gold-600" /> BIS hallmarked
+            <ShieldCheck className="h-4 w-4 text-gold-600" /> Hypoallergenic
           </li>
           <li className="flex flex-col items-center text-center gap-1.5 rounded-lg border border-border bg-cream-100 p-3">
             <Truck className="h-4 w-4 text-gold-600" /> Ships in 24h
@@ -163,14 +163,15 @@ export function ProductDetail({ product }: { product: Product }) {
         </Accordion>
         <Accordion title="Shipping & returns">
           <p className="text-sm text-ink-700 leading-relaxed">
-            Ships free above ₹5,000 in India. Most orders dispatched same-day from Mumbai.
-            14-day returns on unworn pieces. Lifetime free polish at our studio.
+            Ships free above ₹999 in India · flat ₹49 below. Most orders dispatched
+            same-day from Mumbai. 7-day easy returns on unworn pieces.
           </p>
         </Accordion>
         <Accordion title="Care">
           <p className="text-sm text-ink-700 leading-relaxed">
-            14k gold is the most everyday-friendly fine metal — but a soft cloth wipe after wear
-            keeps it brightest. Avoid chlorine and undiluted perfume directly on stones.
+            Our anti-tarnish coating handles daily wear, but gold-plated pieces last longest
+            when you keep them dry. Take off before showering, swimming or sleeping. Wipe with
+            a soft dry cloth. Avoid perfume, lotion and harsh cleaners directly on the metal.
           </p>
         </Accordion>
       </div>

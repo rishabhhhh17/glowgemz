@@ -33,8 +33,8 @@ function Hero() {
             <em className="not-italic text-gold-600">Worn every day.</em>
           </h1>
           <p className="mt-6 max-w-md text-base leading-relaxed text-ink-500">
-            Modern, hand-finished 14k gold jewellery — pendants, hoops, rings and bracelets
-            designed to layer, last, and look like you.
+            Modern 18k gold-plated jewellery — pendants, hoops, rings and bracelets that
+            don't fade after a month. Hypoallergenic, anti-tarnish, honestly priced.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg">
@@ -87,8 +87,8 @@ function SocialProof() {
   const stats = [
     { value: "47,000+", label: "Pieces shipped" },
     { value: "4.9 / 5", label: "12,000+ reviews" },
-    { value: "Hallmarked", label: "BIS-certified 14k" },
-    { value: "Lifetime", label: "Polish & repair" },
+    { value: "Skin-safe", label: "Lead & nickel free" },
+    { value: "6 months", label: "Tarnish guarantee" },
   ];
   return (
     <section className="border-y border-border bg-cream-200/60">
@@ -183,18 +183,18 @@ function BrandStory() {
         <div>
           <span className="eyebrow">Made in Mumbai</span>
           <h2 className="mt-3 display-serif text-display-md text-ink">
-            Real gold. Real diamonds. Made by people who are paid fairly.
+            Polished gold finish. Honest fashion-jewellery prices.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-ink-500">
-            Every GlowGemz piece is hand-finished in our Mumbai studio in solid 14k gold,
-            BIS hallmarked, and set with traceable lab-grown stones. We make small runs,
-            sell direct, and pass the saving on — so the prices feel as honest as the metal.
+            Every GlowGemz piece is plated, polished and quality-checked in our Mumbai studio —
+            18k gold finish, hypoallergenic brass core, hand-set CZ stones. We make small runs,
+            sell direct, and pass the saving on — so the prices feel as honest as the polish.
           </p>
           <ul className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-3">
             {[
-              { icon: Sparkles, label: "Solid 14k", note: "Not plated. Not vermeil." },
-              { icon: ShieldCheck, label: "BIS hallmarked", note: "Independently assayed." },
-              { icon: Truck, label: "Free shipping", note: "On orders ₹5,000+" },
+              { icon: Sparkles, label: "18k plated", note: "Anti-tarnish coated." },
+              { icon: ShieldCheck, label: "Hypoallergenic", note: "Lead & nickel free." },
+              { icon: Truck, label: "Free shipping", note: "On orders ₹999+" },
             ].map((p) => (
               <li key={p.label} className="rounded-lg border border-border bg-cream-100 p-4">
                 <p.icon className="h-5 w-5 text-gold-600" />
@@ -212,14 +212,14 @@ function BrandStory() {
 function HowItWorks() {
   const steps = [
     { no: "01", title: "Choose", body: "Pick the piece (or pieces) — every product has been styled, sized, and stress-tested in real life." },
-    { no: "02", title: "We hand-finish", body: "We polish, set and quality-check each piece in our Mumbai studio. Most ship same day." },
-    { no: "03", title: "Wear forever", body: "Free polish for life. If something breaks, we fix it. Most pieces are made to outlive their owners." },
+    { no: "02", title: "We hand-finish", body: "We plate, polish and quality-check each piece in our Mumbai studio. Most ship same day." },
+    { no: "03", title: "Wear daily", body: "6-month tarnish guarantee on every piece. Anything goes wrong in the first six months — we'll replace it, free." },
   ];
   return (
     <section className="container-wide py-section">
       <div className="mx-auto max-w-2xl text-center">
         <span className="eyebrow">How it works</span>
-        <h2 className="mt-3 display-serif text-display-md text-ink">Bought once, kept forever.</h2>
+        <h2 className="mt-3 display-serif text-display-md text-ink">Worn every day. Honestly priced.</h2>
       </div>
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         {steps.map((s) => (
@@ -236,9 +236,9 @@ function HowItWorks() {
 
 function Testimonials() {
   const quotes = [
-    { q: "I haven't taken the Blossom pendant off in five months. Through showers, beach, sleep — it just stays.", a: "Aanya, Bengaluru" },
-    { q: "The hoops are the right amount of weight. Quality you can feel before the courier even leaves.", a: "Riya, Mumbai" },
-    { q: "Bought the pavé set as a gift and ended up keeping it. Sorry, mum.", a: "Ishika, Delhi" },
+    { q: "I've worn the Blossom pendant every day for five months — hasn't tarnished, hasn't faded. For the price, unreal.", a: "Aanya, Bengaluru" },
+    { q: "The hoops feel like solid gold. No one's clocked them as plated yet. Comfortable on sensitive ears too.", a: "Riya, Mumbai" },
+    { q: "Bought the pavé set for ₹999 and ended up keeping the gift for myself. Sorry, mum.", a: "Ishika, Delhi" },
   ];
   return (
     <section className="bg-ink text-cream-100 py-section">

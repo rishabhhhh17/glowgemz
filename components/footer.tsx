@@ -13,8 +13,8 @@ export function Footer() {
               GlowGemz
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-500">
-              Modern, hand-finished 14k gold jewellery made in India. Designed to be worn —
-              and forgotten.
+              Modern 18k gold-plated jewellery, made in Mumbai. Hypoallergenic, anti-tarnish,
+              honestly priced.
             </p>
             <form
               className="mt-6 flex max-w-sm items-stretch gap-2"
