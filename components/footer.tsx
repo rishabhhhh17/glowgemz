@@ -82,7 +82,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col-reverse gap-4 border-t border-border pt-6 md:flex-row md:items-center md:justify-between">
+        <div className="mt-14 border-t border-border pt-6 text-center text-sm text-ink-700">
+          Use code{" "}
+          <span className="font-mono font-semibold text-ink">WELCOME15</span>{" "}
+          for <span className="font-semibold text-ink">15% off</span> your first order.
+        </div>
+
+        <div className="mt-6 flex flex-col-reverse gap-4 border-t border-border pt-6 md:flex-row md:items-center md:justify-between">
           <p className="text-xs text-ink-500">
             © {new Date().getFullYear()} GlowGemz Jewellery Pvt. Ltd. · Crafted in Mumbai.
           </p>

@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
 import { createServiceClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import { getRazorpay } from "@/lib/razorpay";
+import {
+  clampDiscountForMinTotal,
+  computeSystemDiscountAmount,
+  findSystemDiscountCode,
+} from "@/lib/discounts";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -18,6 +23,7 @@ type Body = {
   subtotal: number;
   shipping: number;
   total: number;
+  discount_code?: string;
 };
 
 export async function POST(req: Request) {
@@ -35,12 +41,30 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Cart totals out of sync" }, { status: 400 });
   }
 
+  // Re-validate discount server-side — never trust client
+  let discountAmount = 0;
+  let appliedCode: string | null = null;
+  if (body.discount_code) {
+    const found = findSystemDiscountCode(body.discount_code);
+    if (found && recomputed >= found.minOrderPaise) {
+      const raw = computeSystemDiscountAmount(found, recomputed);
+      const clamped = clampDiscountForMinTotal(recomputed, raw, body.shipping);
+      discountAmount = clamped.discount;
+      appliedCode = found.code;
+    }
+  }
+  const finalTotal = recomputed - discountAmount + body.shipping;
+
   // Create Razorpay order
   const rp = getRazorpay();
   const rpOrder = await rp.orders.create({
-    amount: body.total,
+    amount: finalTotal,
     currency: "INR",
-    notes: { email: body.customer.email },
+    notes: {
+      email: body.customer.email,
+      discount_code: appliedCode ?? "",
+      discount_paise: String(discountAmount),
+    },
   });
 
   if (!isSupabaseConfigured()) {
@@ -64,7 +88,7 @@ export async function POST(req: Request) {
       items: body.items,
       subtotal: body.subtotal,
       shipping: body.shipping,
-      total_amount: body.total,
+      total_amount: finalTotal,
       currency: "INR",
       payment_status: "pending",
       razorpay_order_id: rpOrder.id,

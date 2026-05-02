@@ -32,14 +32,15 @@ const empty: Form = { name: "", email: "", phone: "", line1: "", line2: "", city
 
 export default function CheckoutPage() {
   const router = useRouter();
-  const { items, subtotal, clear } = useCart();
+  const { items, subtotal, clear, discountCode, discount, total: getTotal } = useCart();
   const [form, setForm] = useState<Form>(empty);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const sub = subtotal();
   const shipping = sub > 0 && sub < site.shippingFreeOver ? site.flatShipping : 0;
-  const total = sub + shipping;
+  const disc = discount(shipping);
+  const total = getTotal(shipping);
 
   useEffect(() => {
     if (items.length === 0) return;
@@ -98,6 +99,7 @@ export default function CheckoutPage() {
           subtotal: sub,
           shipping,
           total,
+          discount_code: discountCode ?? undefined,
         }),
       });
       if (!res.ok) {
@@ -229,6 +231,9 @@ export default function CheckoutPage() {
             </ul>
             <div className="mt-6 space-y-2 text-sm border-t border-border pt-5">
               <Row label="Subtotal" value={formatINR(sub)} />
+              {discountCode && disc > 0 ? (
+                <Row label={`Discount (${discountCode})`} value={`−${formatINR(disc)}`} />
+              ) : null}
               <Row label="Shipping" value={shipping === 0 ? "Free" : formatINR(shipping)} />
               <div className="flex justify-between border-t border-border pt-3 text-base font-medium">
                 <span>Total</span><span>{formatINR(total)}</span>

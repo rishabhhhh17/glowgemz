@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Minus, Plus, Trash2 } from "lucide-react";
+import { Minus, Plus, Trash2, X } from "lucide-react";
 import { useCart } from "@/lib/cart-store";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
@@ -10,10 +11,15 @@ import { formatINR } from "@/lib/utils";
 import { site } from "@/lib/site";
 
 export function CartDrawer() {
-  const { isOpen, close, items, setQty, remove, subtotal } = useCart();
+  const {
+    isOpen, close, items, setQty, remove,
+    subtotal, discountCode, discount, total: getTotal,
+    applyCode, removeCode,
+  } = useCart();
   const sub = subtotal();
   const shipping = sub > 0 && sub < site.shippingFreeOver ? site.flatShipping : 0;
-  const total = sub + shipping;
+  const disc = discount(shipping);
+  const total = getTotal(shipping);
 
   return (
     <Sheet open={isOpen} onOpenChange={(o) => (o ? null : close())}>
@@ -91,6 +97,15 @@ export function CartDrawer() {
                 <span>Subtotal</span>
                 <span>{formatINR(sub)}</span>
               </div>
+              {discountCode && disc > 0 ? (
+                <div className="flex justify-between text-sm text-ink-700">
+                  <span>
+                    Discount{" "}
+                    <span className="font-mono text-xs">({discountCode})</span>
+                  </span>
+                  <span>−{formatINR(disc)}</span>
+                </div>
+              ) : null}
               <div className="flex justify-between text-sm text-ink-700">
                 <span>Shipping</span>
                 <span>{shipping === 0 ? "Free" : formatINR(shipping)}</span>
@@ -99,6 +114,11 @@ export function CartDrawer() {
                 <span>Total</span>
                 <span>{formatINR(total)}</span>
               </div>
+              <CouponInput
+                discountCode={discountCode}
+                applyCode={applyCode}
+                removeCode={removeCode}
+              />
               <Button asChild size="lg" className="w-full mt-2">
                 <Link href="/checkout" onClick={close}>
                   Checkout
@@ -110,6 +130,78 @@ export function CartDrawer() {
         )}
       </SheetContent>
     </Sheet>
+  );
+}
+
+function CouponInput({
+  discountCode,
+  applyCode,
+  removeCode,
+}: {
+  discountCode: string | null;
+  applyCode: (code: string) => { ok: true } | { ok: false; error: string };
+  removeCode: () => void;
+}) {
+  const [value, setValue] = useState("");
+  const [error, setError] = useState<string | null>(null);
+
+  if (discountCode) {
+    return (
+      <div className="flex items-center justify-between rounded-md border border-border bg-white px-3 py-2 text-xs">
+        <span className="text-ink">
+          Code applied:{" "}
+          <span className="font-mono font-semibold tracking-wider">{discountCode}</span>
+        </span>
+        <button
+          type="button"
+          onClick={removeCode}
+          aria-label="Remove discount code"
+          className="inline-flex h-6 w-6 items-center justify-center rounded-full hover:bg-cream-200"
+        >
+          <X className="h-3 w-3" />
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        setError(null);
+        const result = applyCode(value);
+        if (result.ok) setValue("");
+        else setError(result.error);
+      }}
+      className="space-y-1"
+    >
+      <div className="flex gap-2">
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => {
+            setValue(e.target.value.toUpperCase());
+            if (error) setError(null);
+          }}
+          placeholder="Discount code"
+          autoComplete="off"
+          spellCheck={false}
+          className="h-10 flex-1 rounded-full border border-border bg-white px-4 text-sm uppercase tracking-wider focus:border-ink focus:outline-none"
+        />
+        <button
+          type="submit"
+          disabled={!value.trim()}
+          className="rounded-full border border-border bg-white px-4 text-xs font-medium uppercase tracking-wider hover:bg-cream-200 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          Apply
+        </button>
+      </div>
+      {error ? (
+        <p role="alert" className="text-xs text-destructive">
+          {error}
+        </p>
+      ) : null}
+    </form>
   );
 }
 
