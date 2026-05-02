@@ -136,19 +136,23 @@ export default function CheckoutPage() {
             setSubmitting(false);
             return;
           }
-          // 4. fire client purchase pixel (CAPI also fires server-side via webhook)
-          trackPixel(
-            "Purchase",
-            {
-              currency: "INR",
-              value: total / 100,
-              content_ids: items.map((i) => i.productId),
-              contents: items.map((i) => ({ id: i.productId, quantity: i.qty, item_price: i.unitPrice / 100 })),
-              num_items: items.length,
-              order_id: orderId,
-            },
-            orderId, // dedupe key with CAPI
-          );
+          // Stash purchase payload for the thank-you page Pixel fire.
+          // Keyed on orderId, which is the URL param on the success page.
+          // CAPI also fires server-side via webhook with the same eventID.
+          try {
+            sessionStorage.setItem(
+              `gg_purchase_${orderId}`,
+              JSON.stringify({
+                event_id: orderId,
+                value: total / 100,
+                currency: "INR",
+                num_items: items.length,
+                content_ids: items.map((i) => i.productId),
+                contents: items.map((i) => ({ id: i.productId, quantity: i.qty, item_price: i.unitPrice / 100 })),
+                order_id: orderId,
+              }),
+            );
+          } catch {}
           clear();
           router.push(`/order-confirmation/${orderId}`);
         },

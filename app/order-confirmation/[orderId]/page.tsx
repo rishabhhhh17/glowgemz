@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 import { createServiceClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import { Button } from "@/components/ui/button";
 import { formatINR } from "@/lib/utils";
+import { PurchaseTracker } from "./purchase-tracker";
 
 export const dynamic = "force-dynamic";
 
@@ -17,6 +18,7 @@ export default async function OrderConfirmation({ params }: { params: { orderId:
 
   return (
     <div className="container-tight pt-12 pb-section text-center">
+      <PurchaseTracker orderId={params.orderId} />
       <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-gold-100 animate-fade-up">
         <Check className="h-9 w-9 text-gold-600" strokeWidth={2.5} />
       </div>
