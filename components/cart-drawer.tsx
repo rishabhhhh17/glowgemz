@@ -124,7 +124,7 @@ export function CartDrawer() {
                   Checkout
                 </Link>
               </Button>
-              <p className="text-center text-xs text-ink-500">Taxes calculated at checkout · Free shipping above ₹5,000</p>
+              <p className="text-center text-xs text-ink-500">Taxes calculated at checkout · Free shipping on every order</p>
             </div>
           </>
         )}

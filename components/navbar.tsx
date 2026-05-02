@@ -31,7 +31,7 @@ export function Navbar() {
       {/* Announcement bar */}
       <div className="bg-ink text-cream-100 text-xs">
         <div className="container-wide flex h-9 items-center justify-center gap-6 overflow-hidden">
-          <span className="tracking-[0.16em] uppercase">Free shipping above ₹999</span>
+          <span className="tracking-[0.16em] uppercase">Free shipping on every order</span>
           <span className="hidden md:inline tracking-[0.16em] uppercase opacity-60">·</span>
           <span className="hidden md:inline tracking-[0.16em] uppercase">6-month tarnish guarantee</span>
           <span className="hidden md:inline tracking-[0.16em] uppercase opacity-60">·</span>

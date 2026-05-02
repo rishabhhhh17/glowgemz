@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { CartDrawer } from "@/components/cart-drawer";
 import { MetaPixel } from "@/components/meta-pixel";
+import { AnnouncementBar } from "@/components/announcement-bar";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body>
         <MetaPixel />
+        <AnnouncementBar />
         <Navbar />
         <main id="main">{children}</main>
         <Footer />

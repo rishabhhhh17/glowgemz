@@ -13,6 +13,6 @@ export const site = {
     email: "hello@glowgemz.in",
     phone: "+91 80000 00000",
   },
-  shippingFreeOver: 99900, // free shipping above ₹999 (in paise)
-  flatShipping: 4900, // ₹49
+  shippingFreeOver: 0, // Free shipping on every order — kept for call-site compat
+  flatShipping: 0, // Free shipping on every order
 } as const;
