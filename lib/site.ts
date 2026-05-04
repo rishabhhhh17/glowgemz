@@ -4,7 +4,7 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://glowgemz.in",
   tagline: "Quietly precious. Worn every day.",
   description:
-    "Modern 18k gold-plated jewellery — necklaces, hoops, rings and bracelets. Hypoallergenic, anti-tarnish, made for everyday.",
+    "Modern gold-plated jewellery — necklaces, hoops, rings and bracelets. Hypoallergenic, anti-tarnish, made for everyday.",
   social: {
     instagram: "https://instagram.com/glowgemz",
     pinterest: "https://pinterest.com/glowgemz",

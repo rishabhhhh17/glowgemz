@@ -10,7 +10,7 @@ export type Product = {
   slug: string;
   name: string;
   category: "necklaces" | "earrings" | "rings" | "bracelets";
-  metal: "18k Gold Plated" | "Rose Gold Plated" | "Silver Plated";
+  metal: "Gold Plated" | "Rose Gold Plated" | "Silver Plated";
   price: number; // base price in paise (INR)
   compareAtPrice?: number;
   description: string;
@@ -23,8 +23,8 @@ export type Product = {
   inspiration: string;
 };
 
-const NECKLACE: Pick<Product, "category" | "metal"> = { category: "necklaces", metal: "18k Gold Plated" };
-const EARRING: Pick<Product, "category" | "metal"> = { category: "earrings", metal: "18k Gold Plated" };
+const NECKLACE: Pick<Product, "category" | "metal"> = { category: "necklaces", metal: "Gold Plated" };
+const EARRING: Pick<Product, "category" | "metal"> = { category: "earrings", metal: "Gold Plated" };
 
 export const products: Product[] = [
   {
@@ -38,7 +38,7 @@ export const products: Product[] = [
       "A five-petal flower set with a single sparkling CZ stone, suspended on a whisper-thin chain. Designed to be worn — and forgotten. Catches light like the real thing.",
     details: [
       "Five-petal blossom with hand-set AAA cubic zirconia",
-      "18k gold plating over hypoallergenic brass",
+      "Gold plating over hypoallergenic brass",
       "Skin-safe · lead & nickel free",
       "Adjustable 16\" / 17\" / 18\" lengths",
       "Anti-tarnish coating · 6-month replacement guarantee",
@@ -68,7 +68,7 @@ export const products: Product[] = [
     details: [
       "Hand-cut snowflake motif, 5mm",
       "Asymmetric placement at 14\" from clasp",
-      "18k gold plating · stainless steel chain",
+      "Gold plating · stainless steel chain",
       "16\" total + 2\" extender",
       "Hypoallergenic · anti-tarnish",
     ],
@@ -96,7 +96,7 @@ export const products: Product[] = [
       "Our take on the everyday hoop — slightly oversized, weighted just right, with a polished mirror finish that flatters every face. The pair you'll never take off.",
     details: [
       "20mm outer diameter, 4mm thickness",
-      "Lightweight brass core, 18k gold plating",
+      "Lightweight brass core, gold plating",
       "Hinged snap closure, hypoallergenic post",
       "Anti-tarnish · skin-safe",
     ],
@@ -124,7 +124,7 @@ export const products: Product[] = [
       "A sculptural curve that tapers like a falling drop. Seen from the front, an elegant arc; from the side, a confident crescent that catches light.",
     details: [
       "18mm sculpted teardrop profile",
-      "Mirror-finish 18k gold plating",
+      "Mirror-finish gold plating",
       "Post & butterfly back, hypoallergenic",
       "Anti-tarnish coating",
     ],
@@ -155,7 +155,7 @@ export const products: Product[] = [
       "Set of three: polished huggie + CZ pavé huggie + 8mm cuff",
       "12 hand-set AAA CZ stones across pavé piece",
       "Mix-and-match across both ears",
-      "18k gold plating · hypoallergenic",
+      "Gold plating · hypoallergenic",
       "Arrives in our reusable jewellery box",
     ],
     images: [
@@ -179,7 +179,7 @@ export const products: Product[] = [
     details: [
       "Brilliant-cut AAA cubic zirconia",
       "Four-prong basket setting",
-      "18k gold plating, 0.7mm box chain",
+      "Gold plating, 0.7mm box chain",
       "Adjustable 16\" / 17\" / 18\"",
     ],
     images: [
@@ -196,7 +196,7 @@ export const products: Product[] = [
   },
   {
     category: "rings",
-    metal: "18k Gold Plated",
+    metal: "Gold Plated",
     id: "p_thread_band",
     slug: "thread-stacking-band",
     name: "Thread Stacking Band",
@@ -206,7 +206,7 @@ export const products: Product[] = [
     details: [
       "1.2mm slim band",
       "Comfort-fit interior",
-      "18k gold plating · hypoallergenic",
+      "Gold plating · hypoallergenic",
       "Sizes 4 — 9",
     ],
     images: [
@@ -226,7 +226,7 @@ export const products: Product[] = [
   },
   {
     category: "rings",
-    metal: "18k Gold Plated",
+    metal: "Gold Plated",
     id: "p_pave_eternity",
     slug: "pave-eternity-band",
     name: "Pavé Eternity Band",
@@ -237,7 +237,7 @@ export const products: Product[] = [
       "18 round-cut AAA cubic zirconia stones",
       "Channel-set, secured by hand",
       "1.8mm slim profile",
-      "18k gold plating · anti-tarnish",
+      "Gold plating · anti-tarnish",
     ],
     images: [
       "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=1600&q=80",
@@ -255,15 +255,15 @@ export const products: Product[] = [
   },
   {
     category: "bracelets",
-    metal: "18k Gold Plated",
+    metal: "Gold Plated",
     id: "p_chain_bracelet",
     slug: "fine-chain-bracelet",
     name: "Fine Chain Bracelet",
     price: 34900,
     description:
-      "A barely-there chain bracelet. Whisper-thin links of 18k gold plating that pool when you set your wrist down.",
+      "A barely-there chain bracelet. Whisper-thin links of gold plating that pool when you set your wrist down.",
     details: [
-      "0.4mm cable chain, 18k gold plated",
+      "0.4mm cable chain, gold-plated",
       "6.5\" + 1\" extender",
       "Lobster clasp",
       "Hypoallergenic · anti-tarnish",
@@ -278,7 +278,7 @@ export const products: Product[] = [
   },
   {
     category: "bracelets",
-    metal: "18k Gold Plated",
+    metal: "Gold Plated",
     id: "p_pearl_bracelet",
     slug: "pearl-and-gold-bracelet",
     name: "Pearl & Gold Bracelet",
@@ -287,7 +287,7 @@ export const products: Product[] = [
       "Glass pearls strung between fine gold-plated links. The kind of contrast that makes everything else you wear look intentional.",
     details: [
       "5–6mm shell-pearl beads (8 per bracelet)",
-      "18k gold-plated chain",
+      "gold-plated chain",
       "7\" + 1\" extender",
       "Spring-ring clasp · hypoallergenic",
     ],
@@ -312,7 +312,7 @@ export const products: Product[] = [
       "2.5mm AAA cubic zirconia",
       "Four-prong setting",
       "Threaded post, won't loosen",
-      "18k gold plating · hypoallergenic",
+      "Gold plating · hypoallergenic",
     ],
     images: [
       "https://images.unsplash.com/photo-1631982690223-8aa4be0a2497?w=1600&q=80",
@@ -333,7 +333,7 @@ export const products: Product[] = [
     details: [
       "Three baguette-cut AAA CZ stones",
       "16mm bar, 1.5mm height",
-      "18k gold plating, 0.6mm chain",
+      "Gold plating, 0.6mm chain",
       "Adjustable 16\" / 17\" / 18\"",
     ],
     images: [

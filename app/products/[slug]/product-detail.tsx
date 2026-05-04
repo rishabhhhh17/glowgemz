@@ -144,7 +144,7 @@ export function ProductDetail({ product }: { product: Product }) {
 
         <ul className="mt-6 grid grid-cols-3 gap-3 text-xs text-ink-700">
           <li className="flex flex-col items-center text-center gap-1.5 rounded-lg border border-border bg-cream-100 p-3">
-            <Sparkles className="h-4 w-4 text-gold-600" /> 18k plated
+            <Sparkles className="h-4 w-4 text-gold-600" /> plated
           </li>
           <li className="flex flex-col items-center text-center gap-1.5 rounded-lg border border-border bg-cream-100 p-3">
             <ShieldCheck className="h-4 w-4 text-gold-600" /> Hypoallergenic

@@ -33,7 +33,7 @@ function Hero() {
             <em className="not-italic text-gold-600">Worn every day.</em>
           </h1>
           <p className="mt-6 max-w-md text-base leading-relaxed text-ink-500">
-            Modern 18k gold-plated jewellery — pendants, hoops, rings and bracelets that
+            Modern gold-plated jewellery — pendants, hoops, rings and bracelets that
             don't fade after a month. Hypoallergenic, anti-tarnish, honestly priced.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -187,12 +187,12 @@ function BrandStory() {
           </h2>
           <p className="mt-5 text-base leading-relaxed text-ink-500">
             Every GlowGemz piece is plated, polished and quality-checked in our Mumbai studio —
-            18k gold finish, hypoallergenic brass core, hand-set CZ stones. We make small runs,
+            gold gold finish, hypoallergenic brass core, hand-set CZ stones. We make small runs,
             sell direct, and pass the saving on — so the prices feel as honest as the polish.
           </p>
           <ul className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-3">
             {[
-              { icon: Sparkles, label: "18k plated", note: "Anti-tarnish coated." },
+              { icon: Sparkles, label: "plated", note: "Anti-tarnish coated." },
               { icon: ShieldCheck, label: "Hypoallergenic", note: "Lead & nickel free." },
               { icon: Truck, label: "Free shipping", note: "On orders ₹999+" },
             ].map((p) => (

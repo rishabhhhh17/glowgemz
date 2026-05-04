@@ -35,7 +35,7 @@ export function Navbar() {
           <span className="hidden md:inline tracking-[0.16em] uppercase opacity-60">·</span>
           <span className="hidden md:inline tracking-[0.16em] uppercase">6-month tarnish guarantee</span>
           <span className="hidden md:inline tracking-[0.16em] uppercase opacity-60">·</span>
-          <span className="hidden md:inline tracking-[0.16em] uppercase">Hypoallergenic 18k plated</span>
+          <span className="hidden md:inline tracking-[0.16em] uppercase">Hypoallergenic gold-plated</span>
         </div>
       </div>
 

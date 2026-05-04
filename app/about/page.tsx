@@ -15,7 +15,7 @@ export default function AboutPage() {
           made for everyday.
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-500">
-          GlowGemz is a fashion-jewellery studio in Mumbai. We make 18k gold-plated pieces —
+          GlowGemz is a fashion-jewellery studio in Mumbai. We make gold-plated pieces —
           hypoallergenic, anti-tarnish, sold direct. No middlemen, no inflated boutique
           markups, no "starting at" trick pricing. Just well-made imitation jewellery
           at honest numbers — most pieces under ₹999.
@@ -41,9 +41,9 @@ export default function AboutPage() {
         </div>
         <ul className="space-y-7">
           <li>
-            <h3 className="font-display text-xl text-ink">18k plating, double-coated.</h3>
+            <h3 className="font-display text-xl text-ink">plating, double-coated.</h3>
             <p className="mt-1.5 text-sm text-ink-500 leading-relaxed">
-              Most plated jewellery dulls in weeks. We use a thicker 18k gold layer over a
+              Most plated jewellery dulls in weeks. We use a thicker gold gold layer over a
               hypoallergenic brass core, sealed with an anti-tarnish coating — so the colour
               actually stays.
             </p>

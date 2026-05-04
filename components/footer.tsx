@@ -13,7 +13,7 @@ export function Footer() {
               GlowGemz
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-500">
-              Modern 18k gold-plated jewellery, made in Mumbai. Hypoallergenic, anti-tarnish,
+              Modern gold-plated jewellery, made in Mumbai. Hypoallergenic, anti-tarnish,
               honestly priced.
             </p>
             <form
